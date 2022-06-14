@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import OrderItem from '@components/OrderItem';
@@ -18,7 +18,7 @@ const MyOrder = ({ toggleOrders, setToggleOrders }) => {
   return (
     <aside className={styles.MyOrder}>
       <div className={styles['title-container']}>
-        <Image src={flechita} alt="arrow" onClick={() => setToggleOrders(!toggleOrders)} />
+        <Image src={flechita} alt="arrow" onClick={() => setToggleOrders(!toggleOrders)} className={styles.arrow} />
         <p className={styles['title']}>My order</p>
       </div>
       <div className={styles['my-order-content']}>

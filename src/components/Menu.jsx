@@ -9,17 +9,17 @@ const Menu = () => {
       <ul>
         <Link href="/">
           <li>
-            <a className={styles['title']}>My orders</a>
+            <button>My orders</button>
           </li>
         </Link>
         <Link href="/">
           <li>
-            <a>My account</a>
+            <button>My account</button>
           </li>
         </Link>
         <Link href="/">
           <li>
-            <a>Sign out</a>
+            <button>Sign out</button>
           </li>
         </Link>
       </ul>

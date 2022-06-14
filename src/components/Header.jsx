@@ -26,7 +26,7 @@ const Header = () => {
 
   return (
     <nav className={styles.Nav}>
-      <Image src={menu} alt="menu" className={styles.menu} onClick={handleMobile} />
+      <img src={menu.src} alt="menu" className={styles.menu} onClick={handleMobile} />
       <div className={styles['navbar-left']}>
         <Link href="/">
           <Image src={logo} alt="logo" className={styles['nav-logo']} />
@@ -34,43 +34,45 @@ const Header = () => {
         <ul>
           <Link href="/">
             <li>
-              <a>All</a>
+              <button>All</button>
             </li>
           </Link>
           <Link href="/">
             <li>
-              <a>Clothes</a>
+              <button>Clothes</button>
             </li>
           </Link>
           <Link href="/">
             <li>
-              <a>Electronics</a>
+              <button>Electronics</button>
             </li>
           </Link>
           <Link href="/">
             <li>
-              <a>Furnitures</a>
+              <button>Furnitures</button>
             </li>
           </Link>
           <Link href="/">
             <li>
-              <a>Toys</a>
+              <button>Toys</button>
             </li>
           </Link>
           <Link href="/">
             <li>
-              <a>Others</a>
+              <button>Others</button>
             </li>
           </Link>
         </ul>
       </div>
       <div className={styles['navbar-right']}>
         <ul>
-          <li className={styles['navbar-email']} onClick={handleToggle}>
-            platzi@example.com
+          <li>
+            <button className={styles['navbar-email']} onClick={handleToggle}>
+              platzi@example.com
+            </button>
           </li>
-          <li className={styles['navbar-shopping-cart']} onClick={() => setToggleOrders(!toggleOrders)}>
-            <Image className={styles.pointer} src={shoppingCart} alt="shopping cart" />
+          <li className={styles['navbar-shopping-cart']}>
+            <Image className={styles.pointer} src={shoppingCart} alt="shopping cart" onClick={() => setToggleOrders(!toggleOrders)} />
             {state.cart?.length > 0 ? <div>{state.cart?.length}</div> : null}
           </li>
         </ul>

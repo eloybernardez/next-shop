@@ -33,16 +33,19 @@
 .navbar-left ul {
   margin-left: 12px;
 }
-.navbar-left ul li a,
-.navbar-right ul li a {
+.navbar-left ul li button,
+.navbar-right ul li button {
   text-decoration: none;
+  background-color: transparent;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-size: 16px;
   color: $--very-light-pink;
   border: 1px solid $--white;
   padding: 8px;
   border-radius: 8px;
 }
-.navbar-left ul li a:hover,
-.navbar-right ul li a:hover {
+.navbar-left ul li button:hover,
+.navbar-right ul li button:hover {
   border: 1px solid $--hospital-green;
   color: $--hospital-green;
 }

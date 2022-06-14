@@ -17,15 +17,20 @@
   justify-content: flex-end;
 }
 
-.MenuMobile figure img {
+.MenuMobile figure .close {
   width: 15px;
   cursor: pointer;
 }
 
-.MenuMobile a {
+.MenuMobile button {
   text-decoration: none;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  border: none;
+  background-color: transparent;
+  font-size: 15px;
   color: $--black;
   font-weight: bold;
+  cursor: pointer;
   /* margin-bottom: 24px; */
 }
 .MenuMobile ul {
@@ -46,4 +51,7 @@
 .MenuMobile ul li .sign-out {
   font-size: $--sm;
   color: $--hospital-green;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }

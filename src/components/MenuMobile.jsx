@@ -1,76 +1,74 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import close from '@icons/icon_close.png';
-import AppContext from '@context/AppContext';
 import styles from '@styles/MenuMobile.module.scss';
 import Link from 'next/link';
 
 const MenuMobile = ({ toggleMobile, setToggleMobile }) => {
-  const { state } = useContext(AppContext);
   return (
     <div className={styles.MenuMobile}>
       <figure>
-        <Image src={close} alt="close" onClick={() => setToggleMobile(!toggleMobile)} />
+        <Image src={close} alt="close" onClick={() => setToggleMobile(!toggleMobile)} className={styles.close} />
       </figure>
 
       <ul>
         <Link href="/">
           <li>
-            <a>CATEGORIES</a>
+            <button>CATEGORIES</button>
           </li>
         </Link>
         <Link href="/">
           <li>
-            <a>All</a>
+            <button>All</button>
           </li>
         </Link>
         <Link href="/">
           <li>
-            <a>Clothes</a>
+            <button>Clothes</button>
           </li>
         </Link>
         <Link href="/">
           <li>
-            <a>Electronics</a>
+            <button>Electronics</button>
           </li>
         </Link>
         <Link href="/">
           <li>
-            <a>Furnitures</a>
+            <button>Furnitures</button>
           </li>
         </Link>
         <Link href="/">
           <li>
-            <a>Toys</a>
+            <button>Toys</button>
           </li>
         </Link>
         <Link href="/">
           <li>
-            <a>Other</a>
-          </li>
-        </Link>
-      </ul>
-      <ul>
-        <Link href="/">
-          <li>
-            <a>My orders</a>
-          </li>
-        </Link>
-        <Link href="/">
-          <li>
-            <a>My account</a>
+            <button>Other</button>
           </li>
         </Link>
       </ul>
       <ul>
         <Link href="/">
           <li>
-            <a className={styles['email']}>platzi@example.com</a>
+            <button>My orders</button>
           </li>
         </Link>
         <Link href="/">
           <li>
-            <a className={styles['sign-out']}>Sign out</a>
+            <button>My account</button>
+          </li>
+        </Link>
+      </ul>
+      <ul>
+        <Link href="/">
+          <li>
+            <button className={styles['email']}>platzi@example.com</button>
+          </li>
+        </Link>
+        <Link href="/">
+          <li>
+            <button className={styles['sign-out']}>Sign out</button>
           </li>
         </Link>
       </ul>

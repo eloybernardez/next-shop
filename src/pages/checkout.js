@@ -1,9 +1,12 @@
 import Head from 'next/head';
-import React from 'react';
+import React, { useContext } from 'react';
 import OrderItem from '@components/OrderItem';
 import styles from '@styles/Checkout.module.scss';
+import AppContext from '@context/AppContext';
 
-const Checkout = ({ product, indexValue }) => {
+const Checkout = () => {
+  const { state } = useContext(AppContext);
+  const date = new Date().toLocaleDateString('en-US');
   return (
     <>
       <Head>
@@ -15,13 +18,20 @@ const Checkout = ({ product, indexValue }) => {
           <div className={styles['Checkout-content']}>
             <div className={styles.order}>
               <p>
-                <span>03.25.21</span>
-                <span>6 articles</span>
+                <span>{date}</span>
+                <span>{state.cart.length} articles</span>
               </p>
-              <p>$560.00</p>
+              <p>
+                $
+                {state.cart.reduce((accumulator, item) => {
+                  return accumulator + item.price;
+                }, 0)}
+              </p>
             </div>
           </div>
-          <OrderItem product={product} indexValue={indexValue} />
+          {state.cart.map((item, index) => {
+            return <OrderItem product={item} key={index} indexValue={index} />;
+          })}
         </div>
       </div>
     </>
