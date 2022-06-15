@@ -9,7 +9,7 @@ const useGetProducts = (API) => {
       //no se puede usar async en useEffect, así que se utiliza una función asíncrona por dentro que haga la petición a la API.
       const response = await axios(API);
       const filteredProducts = response.data.filter((item) => {
-        return item.images.length > 0;
+        return item?.images.length > 1;
       });
       setProducts(filteredProducts);
     };
