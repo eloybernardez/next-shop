@@ -14,7 +14,7 @@ const Header = () => {
   const [toggle, setToggle] = useState(false);
   const [toggleMobile, setToggleMobile] = useState(false);
   const [toggleOrders, setToggleOrders] = useState(false);
-  const { state } = useContext(AppContext);
+  const { state, updateType } = useContext(AppContext);
 
   const handleToggle = () => {
     setToggle(!toggle);
@@ -25,66 +25,61 @@ const Header = () => {
   };
 
   return (
-    <nav className={styles.Nav}>
-      <button className={styles.menu} onClick={handleMobile}>
-        <img src={menu.src} alt="menu" />
-      </button>
-      <div className={styles['navbar-left']}>
-        <Link href="/">
-          <Image src={logo} alt="logo" className={styles['nav-logo']} />
-        </Link>
-        <ul>
-          <Link href="/">
-            <li>
-              <button>All</button>
-            </li>
+    <>
+      <nav className={styles.Nav}>
+        <button className={styles.menu} onClick={handleMobile}>
+          <img src={menu.src} alt="menu" />
+        </button>
+        <div className={styles['navbar-left']}>
+          <Link href="/" onClick={(e) => e.preventDefault()}>
+            <Image src={logo} alt="logo" className={styles['nav-logo']} />
           </Link>
-          <Link href="/">
+          <ul>
             <li>
-              <button>Clothes</button>
+              <button onClick={() => updateType('Clothes')}>All</button>
             </li>
-          </Link>
-          <Link href="/">
-            <li>
-              <button>Electronics</button>
-            </li>
-          </Link>
-          <Link href="/">
-            <li>
-              <button>Furnitures</button>
-            </li>
-          </Link>
-          <Link href="/">
-            <li>
-              <button>Toys</button>
-            </li>
-          </Link>
-          <Link href="/">
-            <li>
-              <button>Others</button>
-            </li>
-          </Link>
-        </ul>
-      </div>
-      <div className={styles['navbar-right']}>
-        <ul>
-          <li>
-            <button className={styles['navbar-email']} onClick={handleToggle}>
-              platzi@example.com
-            </button>
-          </li>
-          <li className={styles['navbar-shopping-cart']}>
-            <Image className={styles.pointer} src={shoppingCart} alt="shopping cart" onClick={() => setToggleOrders(!toggleOrders)} />
-            {state.cart?.length > 0 ? <div>{state.cart?.length}</div> : null}
-          </li>
-        </ul>
-      </div>
-      {toggle ? <Menu /> : null}
 
-      {toggleOrders ? <MyOrder toggleOrders={toggleOrders} setToggleOrders={setToggleOrders} /> : null}
+            <li>
+              <button onClick={() => updateType('Clothes')}>Clothes</button>
+            </li>
 
-      {toggleMobile ? <MenuMobile toggleMobile={toggleMobile} setToggleMobile={setToggleMobile} /> : null}
-    </nav>
+            <li>
+              <button onClick={() => updateType('Electronics')}>Electronics</button>
+            </li>
+
+            <li>
+              <button onClick={() => updateType('Furniture')}>Furnitures</button>
+            </li>
+
+            <li>
+              <button onClick={() => updateType('Shoes')}>Shoes</button>
+            </li>
+
+            <li>
+              <button onClick={() => updateType('Others')}>Others</button>
+            </li>
+          </ul>
+        </div>
+        <div className={styles['navbar-right']}>
+          <ul>
+            <li>
+              <button className={styles['navbar-email']} onClick={handleToggle}>
+                platzi@example.com
+              </button>
+            </li>
+            <li className={styles['navbar-shopping-cart']}>
+              <Image className={styles.pointer} src={shoppingCart} alt="shopping cart" onClick={() => setToggleOrders(!toggleOrders)} />
+              {state.cart?.length > 0 ? <div>{state.cart?.length}</div> : null}
+            </li>
+          </ul>
+        </div>
+        {toggle ? <Menu /> : null}
+
+        {toggleOrders ? <MyOrder toggleOrders={toggleOrders} setToggleOrders={setToggleOrders} /> : null}
+
+        {toggleMobile ? <MenuMobile toggleMobile={toggleMobile} setToggleMobile={setToggleMobile} /> : null}
+      </nav>
+    </>
   );
 };
 

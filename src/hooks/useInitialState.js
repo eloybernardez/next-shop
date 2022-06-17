@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 const initialState = {
   cart: [],
+  type: '',
 };
 
 const useInitialState = () => {
@@ -32,11 +33,19 @@ const useInitialState = () => {
     });
   };
 
+  const updateType = (string) => {
+    setState({
+      ...state,
+      type: string,
+    });
+  };
+
   return {
     state,
     addToCart,
     removeFromCart,
     removeFromCartWithId,
+    updateType,
   };
 };
 

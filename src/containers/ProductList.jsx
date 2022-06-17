@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import useGetProducts from '@hooks/useGetProducts';
 import ProductItem from '@components/ProductItem';
 import styles from '@styles/ProductList.module.scss';
+import AppContext from '@context/AppContext';
 
 const API = 'https://api.escuelajs.co/api/v1/products/';
 
 const ProductList = () => {
-  const products = useGetProducts(API);
+  const { state } = useContext(AppContext);
+  const products = useGetProducts(API).filter((item) => item.category.name === state.type);
+
   return (
     <section className={styles['main-container']}>
       <div className={styles.ProductList}>
