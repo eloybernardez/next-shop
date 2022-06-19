@@ -44,6 +44,10 @@
 .MenuMobile ul li {
   margin-bottom: 24px;
 }
+.MenuMobile ul li button:focus {
+  color: $--hospital-green;
+}
+
 .MenuMobile ul li .email {
   font-size: $--sm;
   font-weight: 300;

@@ -36,7 +36,7 @@ const Header = () => {
           </Link>
           <ul>
             <li>
-              <button onClick={() => updateType('Clothes')}>All</button>
+              <button onClick={() => updateType('')}>All</button>
             </li>
 
             <li>

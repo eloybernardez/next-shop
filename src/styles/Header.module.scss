@@ -50,6 +50,13 @@
   border: 1px solid $--hospital-green;
   color: $--hospital-green;
 }
+
+.navbar-left ul li button:focus,
+.navbar-right ul li button:focus {
+  border-radius: 6px;
+  color: $--hospital-green;
+}
+
 .navbar-email {
   color: $--very-light-pink;
   font-size: $--sm;

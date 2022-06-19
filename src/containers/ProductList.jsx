@@ -8,7 +8,7 @@ const API = 'https://api.escuelajs.co/api/v1/products/';
 
 const ProductList = () => {
   const { state } = useContext(AppContext);
-  const products = useGetProducts(API).filter((item) => item.category.name === state.type);
+  const products = useGetProducts(API).filter((item) => state.type === '' || item.category.name === state.type);
 
   return (
     <section className={styles['main-container']}>

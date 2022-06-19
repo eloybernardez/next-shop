@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Image from 'next/image';
 import close from '@icons/icon_close.png';
 import styles from '@styles/MenuMobile.module.scss';
 import Link from 'next/link';
+import AppContext from '@context/AppContext';
 
 const MenuMobile = ({ toggleMobile, setToggleMobile }) => {
+  const { updateType } = useContext(AppContext);
   return (
     <div className={styles.MenuMobile}>
       <figure>
@@ -12,53 +14,90 @@ const MenuMobile = ({ toggleMobile, setToggleMobile }) => {
       </figure>
 
       <ul>
-        <Link href="/">
-          <li>
-            <button>CATEGORIES</button>
-          </li>
-        </Link>
-        <Link href="/">
-          <li>
-            <button>All</button>
-          </li>
-        </Link>
-        <Link href="/">
-          <li>
-            <button>Clothes</button>
-          </li>
-        </Link>
-        <Link href="/">
-          <li>
-            <button>Electronics</button>
-          </li>
-        </Link>
-        <Link href="/">
-          <li>
-            <button>Furnitures</button>
-          </li>
-        </Link>
-        <Link href="/">
-          <li>
-            <button>Toys</button>
-          </li>
-        </Link>
-        <Link href="/">
-          <li>
-            <button>Other</button>
-          </li>
-        </Link>
+        <li>
+          <button>CATEGORIES</button>
+        </li>
+
+        <li>
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              updateType('');
+              setToggleMobile(!toggleMobile);
+            }}
+          >
+            All
+          </button>
+        </li>
+
+        <li>
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              updateType('Clothes');
+              setToggleMobile(!toggleMobile);
+            }}
+          >
+            Clothes
+          </button>
+        </li>
+
+        <li>
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              updateType('Electronics');
+              setToggleMobile(!toggleMobile);
+            }}
+          >
+            Electronics
+          </button>
+        </li>
+
+        <li>
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              updateType('Furniture');
+              setToggleMobile(!toggleMobile);
+            }}
+          >
+            Furnitures
+          </button>
+        </li>
+
+        <li>
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              updateType('Shoes');
+              setToggleMobile(!toggleMobile);
+            }}
+          >
+            Shoes
+          </button>
+        </li>
+
+        <li>
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              updateType('Others');
+              setToggleMobile(!toggleMobile);
+            }}
+          >
+            Other
+          </button>
+        </li>
       </ul>
       <ul>
-        <Link href="/">
-          <li>
-            <button>My orders</button>
-          </li>
-        </Link>
-        <Link href="/">
-          <li>
-            <button>My account</button>
-          </li>
-        </Link>
+        <li>
+          <button>My orders</button>
+        </li>
+
+        <li>
+          <button>My account</button>
+        </li>
       </ul>
       <ul>
         <Link href="/">
