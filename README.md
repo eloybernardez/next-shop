@@ -1,16 +1,15 @@
-## Next Shop
+# Next Shop
 An eCommerce concept taken from Shopify made with:
 
-# HTML
-# CSS
-# CSS Modules
-# SASS
-# Responsive Design
-# JS
-# Webpack
-# 
-# React
-# Next.js
+* HTML
+* CSS
+* CSS Modules
+* SASS
+* Responsive Design
+* JS
+* Webpack
+* React
+* Next.js
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
